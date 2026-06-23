@@ -1,0 +1,36 @@
+class Solution
+{
+public:
+    bool isProduct(vector<int> &arr, long long target)
+    {
+        int n = arr.size();
+        sort(arr.begin(), arr.end());
+
+       if target < 0 and all numbers are non-negative, impossible
+        if (target < 0 && *min_element(arr.begin(), arr.end()) >= 0) {
+            return false;
+        }
+
+        int start = 0, end = n - 1;
+        while (start < end)
+        {
+            long long product = 1LL * arr[start] * arr[end];
+
+            if (product == target)
+            {
+                return true;
+            }
+            else if (product < target)
+            {
+               
+                start++;
+            }
+            else
+            {
+              
+                end--;
+            }
+        }
+        return false;
+    }
+};
