@@ -1,0 +1,10 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+class Solution {
+  public:
+    string sortString(string &s) {
+        sort(s.begin(), s.end());  
+        return s;                
+    }
+};
