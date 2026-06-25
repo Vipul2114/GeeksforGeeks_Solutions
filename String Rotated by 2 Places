@@ -1,0 +1,24 @@
+class Solution {
+  private:
+  
+    string rotateLeftByTwo(const string &s) {
+        return s.substr(2) + s.substr(0, 2);
+    }
+
+    
+    string rotateRightByTwo(const string &s) {
+        int n = s.length();
+        return s.substr(n - 2) + s.substr(0, n - 2);
+    }
+
+  public:
+    bool isRotated(string& s1, string& s2) {
+       
+        if (s1.length() != s2.length()) return false;
+
+        if (s1.length() <= 2) return s1 == s2;
+
+     
+        return (s2 == rotateLeftByTwo(s1) || s2 == rotateRightByTwo(s1));
+    }
+};
