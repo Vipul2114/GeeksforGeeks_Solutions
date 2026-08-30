@@ -1,0 +1,13 @@
+class Solution
+{
+public:
+    void utility(int x)
+    {
+
+        while (x != -1)
+        {
+            cout << x << " ";
+            x--;
+        }
+    }
+};
